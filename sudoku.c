@@ -44,8 +44,21 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-   
-    return 1;
+   for (int i = 0 ; i < 9 ; i++){
+      int count = 0;
+      for (int j = 0 ; j < 9 ; j++){
+         if (n->sudo[i][j] != 0){
+            for (int k = 0 ; k < 9 ; k++){
+               if (n->sudo[i][j] == n->sudo[i][k] && k != j)
+                  return 0;
+               if (n->sudo[i][j] == n->sudo[k][j] && k != i){
+                  return 0;
+               }
+            }
+         }
+      }
+   }
+   return 1;
 }
 
 
