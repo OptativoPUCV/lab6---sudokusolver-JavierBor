@@ -50,10 +50,10 @@ int is_valid(Node* n){
       for (int j = 0 ; j < 10 ; j++){
          if (n->sudo[i][j] != 0){
             if (arrayFilas[n->sudo[i][j]] != 0){
-               return 1;
+               return 0;
             }
+            arrayFilas[n->sudo[j][i]] = 1;
          }
-         arrayFilas[n->sudo[j][i]] = 1;
       }
    }
 
@@ -61,11 +61,12 @@ int is_valid(Node* n){
    for (int i = 0 ; i < 10 ; i++){
       int arrayColumnas[10] = {0};
       for (int j = 0 ; j < 10 ; j++){
-         if (n->sudo[j][i] != 0)
+         if (n->sudo[j][i] != 0){
             if (arrayColumnas[n->sudo[j][i]] != 0){
-               return 1;
+               return 0;
             }
-         arrayColumnas[n->sudo[j][i]] = 1;
+            arrayColumnas[n->sudo[j][i]] = 1;
+         }
       }
    }
 
@@ -77,13 +78,13 @@ int is_valid(Node* n){
          int j = 3*(k%3) + (p%3);
          if (n->sudo[i][j] != 0){
             if (arraySubmatrices[n->sudo[i][j]] != 0){
-               return 1;
+               return 0;
             }
          }
          arraySubmatrices[n->sudo[i][j]] = 1;
       }
    }
-   return 0;
+   return 1;
 }
 
 
