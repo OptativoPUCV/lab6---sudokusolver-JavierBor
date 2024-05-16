@@ -122,7 +122,7 @@ Node* DFS(Node* initial, int* cont){
    cont = 0;
    push(S, initial);
    while (!is_empty(S)){
-      Node* n = top(S);
+      Node* n = (Node *) top(S);
       pop(S);
       if (is_final(n)) return n;
       List* adj = get_adj_nodes(n);
