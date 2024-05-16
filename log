@@ -275,3 +275,14 @@ sudoku.c:88:8: error: variable ‘primeraCasilla’ set but not used [-Werror=un
 cc1: all warnings being treated as errors
 Compilation failed
 48cdd70
+Thu 16 May 2024 10:58:45 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:92:13: error: ‘primeraCasilla’ undeclared (first use in this function)
+   92 |             primeraCasilla = 1;
+      |             ^~~~~~~~~~~~~~
+sudoku.c:92:13: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+3858722
