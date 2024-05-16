@@ -52,9 +52,6 @@ int is_valid(Node* n){
                   return 0;
                if (n->sudo[i][j] == n->sudo[k][j] && k != i)
                   return 0;
-
-               if (n->sudo[i][j] == n->sudo[(i/3)*3 + k/3][(j/3)*3 + k%3] && k != j)
-                  return 0;
             }
          }
       }
@@ -84,6 +81,9 @@ List* get_adj_nodes(Node* n){
 
 
 int is_final(Node* n){
+   if (is_valid(n)){
+      return 1;
+   }
     return 0;
 }
 
