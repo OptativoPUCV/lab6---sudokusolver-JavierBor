@@ -91,9 +91,9 @@ List* get_adj_nodes(Node* n){
          if (n->sudo[i][j] == 0 && primeraCasilla == 0){
             primeraCasilla = 1;
             for (k = 1 ; k < 10 ; k++){
-               if (is_valid(n) && primeraCasilla == 1){
-                  Node* adj = copy(n);
-                  adj->sudo[i][j] = k;
+               Node* adj = copy(n);
+               adj->sudo[i][j] = k;
+               if (is_valid(adj) && primeraCasilla == 1){
                   pushBack(list, adj);
                }
             }
