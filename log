@@ -233,3 +233,17 @@ Thu 16 May 2024 09:45:02 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 1c03385
+Thu 16 May 2024 09:46:26 PM UTC: 
+ sudoku.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_final’:
+sudoku.c:110:10: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  110 |          if (n->sudo[i][j] == 0)
+      |          ^~
+sudoku.c:112:13: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  112 |             return 0;
+      |             ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b177a4d
