@@ -56,7 +56,7 @@ int is_valid(Node* n){
 
             for (int k = 0 ; k < 3 ; k++){
                for (int l = 0 ; l < 3 ; l++){
-                  if (n->sudo[i][j] == n->sudo[i + k][j + l] && (i + k != i || j + l != j)){
+                  if (n->sudo[i][j] == n->sudo[i % 3][j % 3] && (i + k != i || j + l != j)){
                      return 0;
                   }
                }
