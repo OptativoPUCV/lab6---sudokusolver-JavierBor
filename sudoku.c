@@ -45,9 +45,9 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
    //Filas
-   for (int i = 0 ; i < 10 ; i++){
+   for (int i = 0 ; i < 9 ; i++){
       int arrayFilas[10] = {0};
-      for (int j = 0 ; j < 10 ; j++){
+      for (int j = 0 ; j < 9 ; j++){
          if (n->sudo[i][j] != 0){
             if (arrayFilas[n->sudo[i][j]] != 0){
                return 0;
@@ -58,9 +58,9 @@ int is_valid(Node* n){
    }
 
    //Columnas
-   for (int i = 0 ; i < 10 ; i++){
+   for (int i = 0 ; i < 9 ; i++){
       int arrayColumnas[10] = {0};
-      for (int j = 0 ; j < 10 ; j++){
+      for (int j = 0 ; j < 9 ; j++){
          if (n->sudo[j][i] != 0){
             if (arrayColumnas[n->sudo[j][i]] != 0){
                return 0;
@@ -71,9 +71,9 @@ int is_valid(Node* n){
    }
 
    //Submatrices
-   for (int k = 0 ; k < 10 ; k++){
+   for (int k = 0 ; k < 9 ; k++){
       int arraySubmatrices[10] = {0};
-      for (int p = 0 ; p < 10 ; p++){
+      for (int p = 0 ; p < 9 ; p++){
          int i = 3*(k/3) + (p/3);
          int j = 3*(k%3) + (p%3);
          if (n->sudo[i][j] != 0){
