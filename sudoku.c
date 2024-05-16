@@ -45,7 +45,6 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
    //Filas
-   return 0;
    for (int i = 0 ; i < 9 ; i++){
       int arrayFilas[10] = {0};
       for (int j = 0 ; j < 9 ; j++){
