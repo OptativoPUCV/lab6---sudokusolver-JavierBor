@@ -50,9 +50,7 @@ int is_valid(Node* n){
       for (int j = 0 ; j < 9 ; j++){
          if (n->sudo[i][j] == 0) continue;
          if (n->sudo[i][j] < 1 || n->sudo[i][j] > 9) return 0;
-         if (arrayFilas[n->sudo[i][j]] != 0){
-            return 0;
-         }
+         if (arrayFilas[n->sudo[i][j]] != 0) return 0;
          arrayFilas[n->sudo[i][j]] = 1;
       }
    }
@@ -63,9 +61,7 @@ int is_valid(Node* n){
       for (int j = 0 ; j < 9 ; j++){
          if (n->sudo[j][i] == 0) continue;
          if (n->sudo[j][i] < 1 || n->sudo[j][i] > 9) return 0;
-         if (arrayColumnas[n->sudo[j][i]] != 0){
-            return 0;
-         }
+         if (arrayColumnas[n->sudo[j][i]] != 0) return 0;
          arrayColumnas[n->sudo[j][i]] = 1;
       }
    }
@@ -78,9 +74,7 @@ int is_valid(Node* n){
          int j = 3*(k%3) + (p%3);
          if (n->sudo[i][j] == 0) continue;
          if (n->sudo[i][j] < 1 || n->sudo[i][j] > 9) return 0;
-         if (arraySubmatrices[n->sudo[i][j]] != 0){
-            return 0;
-         }
+         if (arraySubmatrices[n->sudo[i][j]] != 0) return 0;
          arraySubmatrices[n->sudo[i][j]] = 1;
       }
    }
@@ -95,9 +89,9 @@ List* get_adj_nodes(Node* n){
       for (j = 0 ; j < 9 ; j++){
          if (n->sudo[i][j] == 0){
             for (k = 1 ; k < 10 ; k++){
-               if (is_valid(n)){
-                  Node* adj = copy(n);
-                  adj->sudo[i][j] = k;
+               Node* adj = copy(n);
+               adj->sudo[i][j] = k;
+               if (is_valid(adj)){
                   pushBack(list, adj);
                }
             }
