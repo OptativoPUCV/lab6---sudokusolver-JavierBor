@@ -88,7 +88,7 @@ List* get_adj_nodes(Node* n){
    int primeraCasilla = 0;
    for (i = 0 ; i < 9 ; i++){
       for (j = 0 ; j < 9 ; j++){
-         if (n->sudo[i][j] == 0 && primeraCasilla == 0){
+         if (n->sudo[i][j] == 0){
             primeraCasilla = 1;
             for (k = 1 ; k < 10 ; k++){
                Node* adj = copy(n);
