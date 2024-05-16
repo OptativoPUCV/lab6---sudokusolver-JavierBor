@@ -130,8 +130,8 @@ Node* DFS(Node* initial, int* cont){
       while (aux != NULL){
          push(S, aux);
          aux = next(adj);
+         
          cont++;
-         if (is_final(aux)) return aux;
       }
       free(n);
    }
