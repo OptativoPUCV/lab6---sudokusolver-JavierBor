@@ -78,7 +78,7 @@ int is_valid(Node* n){
       for (int p = 0 ; p < 9 ; p++){
          int i = 3*(k/3) + (p/3);
          int j = 3*(k%3) + (p%3);
-         if (n->sudo[i][j] < 1 || n->sudo[i][j] > 9) return 0;
+         if (n->sudo[i][j] < 0 || n->sudo[i][j] > 9) return 0;
          if (n->sudo[i][j] != 0){
             if (arraySubmatrices[n->sudo[i][j]] != 0){
                return 0;
