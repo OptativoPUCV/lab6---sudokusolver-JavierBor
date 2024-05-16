@@ -264,3 +264,14 @@ Thu 16 May 2024 09:48:58 PM UTC:
  tests:  10|0
 total_score: 70/70
 580ee15
+Thu 16 May 2024 10:58:34 PM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:88:8: error: variable ‘primeraCasilla’ set but not used [-Werror=unused-but-set-variable]
+   88 |    int primeraCasilla = 0;
+      |        ^~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+48cdd70
